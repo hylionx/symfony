@@ -1,0 +1,49 @@
+{% extends 'niveau2/main.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block vue %}
+    <form action="" method="post">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix unitaire</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+
+            </thead>
+            {% set quantiteTotal, prixTotal = 0, 0%}
+
+            {% for ligne in panier %}
+                <tr>
+                    <td>{{ ligne.produit.libelle }}</td>
+                    <td>{{ ligne.produit.prix }} €</td>
+                    <td>{{ ligne.quantite }}</td>
+                    <td>{{ (ligne.quantite * ligne.produit.prix) }} €</td>
+                    <td>
+                        <a href="{{ path('magasin') }}" class="btn btn-info">+</a>
+                        <a href="{{ path('retirerProduit', {'id' : ligne.id}) }}" class="btn btn-danger">X</a>
+                    </td>
+
+                    {% set quantiteTotal = quantiteTotal + ligne.quantite %}
+                    {% set prixTotal = prixTotal + (ligne.quantite * ligne.produit.prix) %}
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td><b>Total</b></td>
+                <td></td>
+                <td><b>{{ quantiteTotal }}</b></td>
+                <td><b>{{ prixTotal }} €</b></td>
+                <td></td>
+            </tr>
+        </table>
+        <a href="{{ path('acheter') }}" type="submit" class="btn btn-outline-primary">Commander</a>
+        <a href="{{ path('viderPanier') }}"type="submit" class="btn btn-outline-warning">Vider</a>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+<header>
+    <img class="banner" src="{{ asset('img/client.jpg') }}" alt="">
+</header>
+
+
+<h3>menu Client</h3>
+<p>Il y a {{ nbrProduits }} produits disponibles</p>
+
+<ul>
+    <li><a href="{{ path('seDeconnecter') }}">Se déconnecter</a></li>
+    <li><a href="{{ path('accueil') }}">aller à la page d'accueil</a></li>
+    <li><a href="{{ path('modifierProfil') }}">Modifier le profil</a></li>
+    <li><a href="{{ path('magasin') }}">Lister le contenu du magasin</a></li>
+    <li><a href="{{ path('panier') }}">Gérer son panier</a></li>
+</ul>
