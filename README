@@ -1,0 +1,10 @@
+Projet de BTS Services informatiques aux organisations, spécialité : solutions logicielles et applications métiers 
+
+Réaliser par groupe de 3 en PHP, SQL, HTML, CSS, Bootstrap, MySQL
+
+Site dynamique en PHP de gestions de réservations de bateaux pour une compagnie maritime. 
+
+- Création de compte client/ administrateur
+- Recherche par date du port A (départ) vers le port B (destination)
+- L'administrateur peut ajouter, modifier, supprimer des voyages. Consulter les statistiques des ventes etc.
+- Le client a un espace dédié qui ressence l'ensemble de ses voyages et ses points de fidélités. 
